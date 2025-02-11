@@ -47,7 +47,7 @@ const AdminLogin = () => {
             dispatch(messageClear())  
             navigate('/')          
         }
-    },[errorMessage,successMessage])
+    },[errorMessage, successMessage, dispatch, navigate])
 
     return (
         <div className='min-w-screen min-h-screen bg-[#cdcae9] flex justify-center items-center' >
@@ -56,7 +56,7 @@ const AdminLogin = () => {
                
         <div className='h-[70px] flex justify-center items-center'>
             <div className='w-[180px] h-[50px]'>
-                <img className='w-full h-full' src="http://localhost:3000/images/logo.png" alt="image" />
+                <img className='w-full h-full' src="http://localhost:3000/images/logo.png" alt="Product Logo" />
             </div>
             </div>       
 
