@@ -78,21 +78,21 @@ export const allNav = [
     },
     {
         id : 10,
-        title : 'Add Product',
+        title : 'Add Book',
         icon : <IoMdAdd />,
         role : 'seller',
         path: '/seller/dashboard/add-product'
     },     
     {
         id : 11,
-        title : 'All Product',
+        title : 'All Books',
         icon : <MdViewList />,
         role : 'seller',
         path: '/seller/dashboard/products'
     },
     {
         id : 12,
-        title : 'Discount Product',
+        title : 'Discount Book',
         icon : <TbBasketDiscount />,
         role : 'seller',
         path: '/seller/dashboard/discount-product'

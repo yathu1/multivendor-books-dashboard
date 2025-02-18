@@ -160,12 +160,12 @@ const AddProduct = () => {
     <form onSubmit={add}>
         <div className='flex flex-col mb-3 md:flex-row gap-4 w-full text-[#d0d2d6]'>
             <div className='flex flex-col w-full gap-1'>
-                <label htmlFor="name">Product Name</label>
+                <label htmlFor="name">Book Name</label>
                 <input className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 rounded-md text-[#d0d2d6]' onChange={inputHandle} value={state.name} type="text" name='name' id='name' placeholder='Product Name' />
             </div>  
 
             <div className='flex flex-col w-full gap-1'>
-                <label htmlFor="brand">Product Brand</label>
+                <label htmlFor="brand">Book Author</label>
                 <input className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 rounded-md text-[#d0d2d6]' onChange={inputHandle} value={state.brand} type="text" name='brand' id='brand' placeholder='Brand Name' />
             </div>   
 
@@ -197,7 +197,7 @@ const AddProduct = () => {
             </div>  
 
             <div className='flex flex-col w-full gap-1'>
-                <label htmlFor="stock">Product Stock</label>
+                <label htmlFor="stock">Stock</label>
                 <input className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 rounded-md text-[#d0d2d6]' onChange={inputHandle} value={state.stock} type="text" name='stock' id='stock' placeholder='Stock' />
             </div>   
 
