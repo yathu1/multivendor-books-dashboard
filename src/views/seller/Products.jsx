@@ -30,7 +30,7 @@ const Products = () => {
 
     return (
         <div className='px-2 lg:px-7 pt-5'>
-            <h1 className='text-[#000000] font-semibold text-lg mb-3'>All Products</h1>
+            <h1 className='text-[#000000] font-semibold text-lg mb-3'>All Books</h1>
 
          <div className='w-full p-4 bg-[#6a5fdf] rounded-md'> 
          <Search setParPage={setParPage} setSearchValue={setSearchValue} searchValue={searchValue} />
@@ -44,7 +44,7 @@ const Products = () => {
             <th scope='col' className='py-3 px-4'>Image</th>
             <th scope='col' className='py-3 px-4'>Name</th>
             <th scope='col' className='py-3 px-4'>Category</th>
-            <th scope='col' className='py-3 px-4'>Brand</th>
+            <th scope='col' className='py-3 px-4'>Author</th>
             <th scope='col' className='py-3 px-4'>Price</th>
             <th scope='col' className='py-3 px-4'>Discount</th>
             <th scope='col' className='py-3 px-4'>Stock</th>
