@@ -141,6 +141,21 @@ export const profile_info_add = createAsyncThunk(
 
         // end Method 
 
+        //change password
+            export const change_password = createAsyncThunk(
+                'auth/change_password',
+                async(info ,{rejectWithValue, fulfillWithValue}) => {
+                      
+                    try {
+                        const {data} = await api.post('/change-password',info,{withCredentials: true})
+                        // console.log(data)            
+                        return fulfillWithValue(data.message)
+                    } catch (error) {
+                        // console.log(error.response.data)
+                        return rejectWithValue(error.response.data.message)
+                    }
+                }
+            )
  
 export const authReducer = createSlice({
     name: 'auth',
@@ -224,6 +239,20 @@ export const authReducer = createSlice({
             state.loader = false;
             state.userInfo = payload.userInfo
             state.successMessage = payload.message
+        })
+
+        //change password
+        .addCase(change_password.pending, (state) => {
+            state.loader = true;
+            state.errorMessage = null
+        })
+        .addCase(change_password.rejected, (state,action) => {
+            state.loader = false;
+            state.errorMessage = action.payload;
+        }) 
+        .addCase(change_password.fulfilled, (state,action) => {
+            state.loader = false;
+            state.successMessage = action.payload
         })
 
     }
