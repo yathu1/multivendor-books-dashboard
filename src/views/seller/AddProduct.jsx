@@ -13,7 +13,7 @@ const AddProduct = () => {
     const dispatch = useDispatch()
     const { categorys } = useSelector(state => state.category)
     const { loader,successMessage,errorMessage } = useSelector(state => state.product)
-
+    const [condition, setCondition] = useState('new');
     useEffect(() => {
         dispatch(get_category({
             searchValue: '',
@@ -134,7 +134,7 @@ const AddProduct = () => {
         formData.append('brand',state.brand)
         formData.append('shopName','EasyShop') 
         formData.append('category',category)
-
+        formData.append('condition', condition); // Add condition to form data
         for (let i = 0; i < images.length; i++) {
             formData.append('images',images[i]) 
         }
@@ -222,6 +222,33 @@ const AddProduct = () => {
                 <textarea className='px-4 py-2 focus:border-indigo-500 outline-none bg-[#6a5fdf] border border-slate-700 rounded-md text-[#d0d2d6]' onChange={inputHandle} value={state.description} name='description' id='description' placeholder='Description' cols="10" rows="4"></textarea> 
                 
             </div> 
+            <div className='flex flex-col mb-3 md:flex-row gap-4 w-full text-[#d0d2d6]'>
+    <div className='flex flex-col w-full gap-1'>
+        <label>Condition</label>
+        <div className='flex items-center gap-4'>
+            <label className='flex items-center gap-2'>
+                <input
+                    type='radio'
+                    name='condition'
+                    value='new'
+                    checked={condition === 'new'}
+                    onChange={(e) => setCondition(e.target.value)}
+                />
+                New
+            </label>
+            <label className='flex items-center gap-2'>
+                <input
+                    type='radio'
+                    name='condition'
+                    value='used'
+                    checked={condition === 'used'}
+                    onChange={(e) => setCondition(e.target.value)}
+                />
+                Used
+            </label>
+        </div>
+    </div>
+</div>
 
             <div className='grid lg:grid-cols-4 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-4 gap-3 w-full text-[#d0d2d6] mb-4'>
                {

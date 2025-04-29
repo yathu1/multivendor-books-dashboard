@@ -48,6 +48,7 @@ const Products = () => {
             <th scope='col' className='py-3 px-4'>Price</th>
             <th scope='col' className='py-3 px-4'>Discount</th>
             <th scope='col' className='py-3 px-4'>Stock</th>
+            <th scope='col' className='py-3 px-4'>Condition</th>
             <th scope='col' className='py-3 px-4'>Action</th> 
         </tr>
         </thead>
@@ -62,7 +63,7 @@ const Products = () => {
                 <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>{ d?.name?.slice(0,15)}...</td>
                 <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>{ d.category }</td>
                 <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>{d.brand} </td>
-                <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>${d.price}</td>
+                <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>Rs. {d.price}</td>
                 <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>
                     {
                         d.discount === 0 ? <span>No Discount</span> : 
@@ -73,7 +74,8 @@ const Products = () => {
                      </td>
                 
                 <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>{d.stock}</td>
-                 
+                <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>{d.condition}</td>
+
     <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>
         <div className='flex justify-start items-center gap-4'>
         <Link to={`/seller/dashboard/edit-product/${d._id}`} className='p-[6px] bg-yellow-500 rounded hover:shadow-lg hover:shadow-yellow-500/50'> <FaEdit/> </Link> 
