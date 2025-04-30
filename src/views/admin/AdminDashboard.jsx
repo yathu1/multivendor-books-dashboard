@@ -5,15 +5,13 @@ import { FaCartShopping } from "react-icons/fa6";
 import Chart from 'react-apexcharts'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import seller from '../../assets/seller.png'
 import { get_admin_dashboard_data } from '../../store/Reducers/dashboardReducer';
-import moment from 'moment';
 
 const AdminDashboard = () => {
 
     const dispatch = useDispatch()
-    const {totalSale,totalOrder,totalProduct,totalSeller,recentOrder,recentMessage} = useSelector(state=> state.dashboard)
-    const {userInfo} = useSelector(state=> state.auth)
+    const {totalSale,totalOrder,totalProduct,totalSeller,recentOrder} = useSelector(state=> state.dashboard)
+
 
 
 
@@ -151,45 +149,7 @@ const AdminDashboard = () => {
             </div>
 
         
-        <div className='w-full lg:w-5/12 lg:pl-4 mt-6 lg:mt-0'>
-            <div className='w-full bg-[#6a5fdf] p-4 rounded-md text-[#d0d2d6]'>
-                <div className='flex justify-between items-center'>
-                    <h2 className='font-semibold text-lg text-[#d0d2d6] pb-3'>Recent Seller Message</h2>
-                    <Link className='font-semibold text-sm text-[#d0d2d6]'>View All</Link>
-                </div>
-
-        <div className='flex flex-col gap-2 pt-6 text-[#d0d2d6]'>
-            <ol className='relative border-1 border-slate-600 ml-4'>
-               
-               {
-                recentMessage.map((m, i) => <li className='mb-3 ml-6'>
-                <div className='flex absolute -left-5 shadow-lg justify-center items-center w-10 h-10 p-[6px] bg-[#4c7fe2] rounded-full z-10'>
-                {
-                    m.senderId === userInfo._id ? <img className='w-full rounded-full h-full shadow-lg' src={userInfo.image} alt="" /> : <img className='w-full rounded-full h-full shadow-lg' src={seller} alt="" />
-                } 
-                </div>
-                <div className='p-3 bg-slate-800 rounded-lg border border-slate-600 shadow-sm'>
-                <div className='flex justify-between items-center mb-2'>
-            <Link className='text-md font-normal'>{m.senderName}</Link>
-            <time className='mb-1 text-sm font-normal sm:order-last sm:mb-0'> {moment(m.createdAt).startOf('hour').fromNow()}</time>
-                </div>
-                <div className='p-2 text-xs font-normal bg-slate-700 rounded-lg border border-slate-800'>
-                    {m.message}
-                </div>
-                </div>
-            </li>)
-               }
-               
-                
- 
-
-            </ol>
-
-        </div>
-
-
-            </div>
-        </div>
+        
         </div>
 
 
@@ -215,7 +175,7 @@ const AdminDashboard = () => {
             {
                 recentOrder.map((d, i) => <tr key={i}>
                 <td scope='row' className='py-3 px-4 font-medium whitespace-nowrap'>#{d._id}</td>
-                <td scope='row' className='py-3 px-4 font-medium whitespace-nowrap'>${d.price}</td>
+                <td scope='row' className='py-3 px-4 font-medium whitespace-nowrap'>Rs. {d.price}</td>
                 <td scope='row' className='py-3 px-4 font-medium whitespace-nowrap'>{d.payment_status}</td>
                 <td scope='row' className='py-3 px-4 font-medium whitespace-nowrap'>{d.delivery_status}</td>
                 <td scope='row' className='py-3 px-4 font-medium whitespace-nowrap'>

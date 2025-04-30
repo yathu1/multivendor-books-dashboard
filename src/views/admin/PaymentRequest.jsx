@@ -44,7 +44,7 @@ const PaymentRequest = () => {
         return (
         <div style={style} className='flex text-sm text-white font-medium'>
         <div className='w-[25%] p-2 whitespace-nowrap'>{index + 1}</div>
-        <div className='w-[25%] p-2 whitespace-nowrap'>${pendingWithdrows[index]?.amount}</div>
+        <div className='w-[25%] p-2 whitespace-nowrap'>Rs. {pendingWithdrows[index]?.amount}</div>
         <div className='w-[25%] p-2 whitespace-nowrap'>
             <span className='py-[1px] px-[5px] bg-slate-300 text-blue-500 rounded-md text-sm'>{pendingWithdrows[index]?.status}</span>
          </div>

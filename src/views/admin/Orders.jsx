@@ -58,7 +58,7 @@ const Orders = () => {
             myOrders.map((o,i) =>  <div className='text-[#d0d2d6] '>
             <div className=' flex justify-between items-start border-b border-slate-700'>
          <div className='py-3 w-[25%] font-medium whitespace-nowrap'>#{o._id}</div>
-                <div className='py-3 w-[13%] font-medium'>${o.price}</div>
+                <div className='py-3 w-[13%] font-medium'>Rs. {o.price}</div>
                 <div className='py-3 w-[18%] font-medium'>{o.payment_status}</div>
                 <div className='py-3 w-[18%] font-medium'>{o.delivery_status}</div>
                 <div className='py-3 w-[18%] font-medium'>

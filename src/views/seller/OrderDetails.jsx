@@ -68,7 +68,7 @@ const OrderDetails = () => {
                 <h2>Payment Status: </h2>
                 <span className='text-base'>{order.payment_status}</span>
              </div>  
-             <span>Price : ${order.price}</span> 
+             <span>Price : Rs. {order.price}</span> 
 
          {
             order?.products?.map((p,i) => <div key={i} className='mt-4 flex flex-col gap-4 bg-[#8288ed] rounded-md'>

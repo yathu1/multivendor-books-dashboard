@@ -54,7 +54,7 @@ const Orders = () => {
                 myOrders.map((d, i) => <tr key={i}>
                  
                 <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>#{d._id}</td>
-                <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>${d.price}</td>
+                <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>Rs. {d.price}</td>
                 <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>{d.payment_status} </td>
                 <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>{d.delivery_status}</td> 
                 <td scope='row' className='py-1 px-4 font-medium whitespace-nowrap'>{d.date}</td> 

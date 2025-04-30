@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { MdCurrencyExchange,MdProductionQuantityLimits } from "react-icons/md";
-import { FaUsers } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6"; 
 import Chart from 'react-apexcharts'
 import { Link } from 'react-router-dom';
@@ -214,7 +213,7 @@ const SellerDashboard = () => {
             {
                 recentOrder.map((d, i) => <tr key={i}>
                 <td scope='row' className='py-3 px-4 font-medium whitespace-nowrap'>#{d._id}</td>
-                <td scope='row' className='py-3 px-4 font-medium whitespace-nowrap'>${d.price}</td>
+                <td scope='row' className='py-3 px-4 font-medium whitespace-nowrap'>Rs. {d.price}</td>
                 <td scope='row' className='py-3 px-4 font-medium whitespace-nowrap'>{d.payment_status}</td>
                 <td scope='row' className='py-3 px-4 font-medium whitespace-nowrap'>{d.delivery_status}</td>
                 <td scope='row' className='py-3 px-4 font-medium whitespace-nowrap'>
